@@ -1,12 +1,11 @@
 <template>
-    <div>
-        <div v-for="(item, index) in items" :key="index">
+    <div class="w-full m-auto">
+        <ul class="my-4" v-for="(item, index) in items" :key="index">
             <list-item
                 :item="item"
-                class="item"
                 v-on:itemchanged="$emit('reloadlist')"
             />
-        </div>
+        </ul>
     </div>
 </template>
 
@@ -14,17 +13,11 @@
 import listItem from "./listItem";
 export default {
     props: ["items"],
-
     components: {
         listItem,
     },
 };
 </script>
 <style scoped>
-.item {
-    background-color: #f7f7f7;
-    padding: 5px;
-    margin-bottom: 5px;
-    margin-top: 5px;
-}
+
 </style>
